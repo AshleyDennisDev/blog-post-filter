@@ -22,7 +22,7 @@
           />
         </label>
         <div class="post-container"></div>
-        <article class="post">
+        <!-- <article class="post">
             <div class="post__meta">
               <div class="post__tag--container">
                 <span class="post__tag">architecture</span> <span class="post__tag">consensus</span>
@@ -43,7 +43,7 @@
               Compile IRC a place for everything functional programming callback hell Netscape OTP quick sort neck beard AI concurrent sudo model legacy code React queue val serverless reactive class static typing cache heap sort mock contribute stack trace frontend DevTools directed acyclic graph.
             </p>
             <a href="#" class="btn">Read Post</a>
-        </article>
+        </article> -->
       </div>
       <button class="btn btn--view">View More Posts</button>
     </main>
@@ -107,7 +107,7 @@
             <div class="post__meta">
               <div class="post__tag--container">
                 <span class="skeleton post__tag"></span> 
-                <span class="skeleton post__tag">/span>
+                <span class="skeleton post__tag"></span>
               </div>
               <p class="skeleton post__date"></p>
             </div>
@@ -126,7 +126,7 @@
                 <p class="skeleton"></p>
                 <p class="skeleton "></p>
             </div>
-            <a href="#" class="btn"></a>
+            <a href="#" class="skeleton btn"></a>
         </article>`;
         document.querySelector('.post-container').innerHTML = [skeleton.repeat(3), skeletonCSS].join('');
     })();

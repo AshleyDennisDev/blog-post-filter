@@ -3,24 +3,12 @@ import faker from 'faker'
 import {phrase, sentence, paragraph} from 'coder-ipsum'
 
 let posts = [];
-const NUMBER_OF_POSTS = 10;
+const NUMBER_OF_POSTS = 100;
 let userID = 1;
 
 function Post() {
-    this.user = {
-        id: userID++,
-        name:[
-            {
-                firstName: faker.name.firstName()
-            },
-            {
-                lastName: faker.name.lastName()
-            }
-        ],
-        avatar: faker.image.avatar()
-    },
-    this.title = phrase(4),
-    this.summary= paragraph(2)
+    this.user  = faker.helpers.createCard()
+
 }
 
 for (let i=0; i<NUMBER_OF_POSTS; i++) {
