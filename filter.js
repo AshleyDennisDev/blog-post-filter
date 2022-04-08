@@ -1,9 +1,9 @@
-//query selectors
+// query selectors
 let posts = [];
 let filteredPosts = [];
-const POSTS_TO_SHOW = 6;
+const POSTS_TO_SHOW = 10;
 let maxDisplayLimit = POSTS_TO_SHOW;
-const postContainer = document.querySelector(".post-container");
+const postContainer = document.querySelector('.post-container');
 const search = document.querySelector('[type="search"]');
 
 //create caards and update UI
@@ -42,22 +42,20 @@ function generatePost(post) {
     </h3>
     <div class="post__author">
       <img class="post__author--avatar" width="55" src="${
-        post.meta.author.avatar
+        post.meta.avatar
       }"
       alt="${post.user.name[0].firstName} ${post.user.name[1].lastName}"> 
       <div>
         <p class="post__author--name">${post.user.name[0].firstName} ${
     post.user.name[1].lastName
   }</p>
-        <p class="post__author--role"><small>${
-          post.meta.author.jobTitle
-        }</small></p>
+        <p class="post__author--role"><small>${post.jobTitle}</small></p>
       </div>
     </div>
     <div class="post__body">
     ${post.summary}
     </div>
-    <a href="${post.meta.url}" class="btn"></a>`;
+    <a href="${post.meta.url}" class="btn"> Read Post</a>`;
   return article;
 }
 
@@ -71,7 +69,7 @@ function loadPosts() {
 }
 
 function filterPosts() {
-  const searchFilter = (post) => {
+  const searchFilter = (post) =>
     [
       post.title,
       post.summary,
@@ -96,7 +94,7 @@ async function fetchPosts() {
             return response.json();
         })
         .then((data) => {
-          posts = data.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date));
+          posts = data.sort((a, b) => new Date(b.date) - new Date(a.date))
           filterPosts();
         })
         .catch((error) => {
@@ -113,4 +111,4 @@ function viewMorePosts(){
 document.querySelector('.btn--view').addEventListener('click', viewMorePosts);
 
 // filter for search
-search.addEventListener('keyup', filterPosts);
+search.addEventListener('keyup', filterPosts)
